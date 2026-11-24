@@ -46,7 +46,7 @@ class ColorFormatter(logging.Formatter):
         if not sys.stderr.isatty(): return msg
 
         old = f"[{record.levelname}]"
-        new = f"{_COLORS.get([record.levelno])}{old}\x1b[0m"
+        new = f"{_COLORS.get(record.levelno)}{old}\x1b[0m"
         return msg.replace(old, new, 1)
 
 _LOGGER = "papersplease"
